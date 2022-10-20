@@ -1,6 +1,5 @@
 class Drucker:
     Marke: str 
-    anzahl_patronen: int
     Farbe: str
     max_papier_drucken: int
     min_papier_drucken: int
