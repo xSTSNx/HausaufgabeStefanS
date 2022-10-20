@@ -1,15 +1,15 @@
 class Drucker:
-    Marke: str 
+    marke: str 
     anzahl_patronen: int
-    Farbe: str
+    farbe: str
     max_papier_drucken: int
     min_papier_drucken: int
     aktuell_papier_drucken: int
     power: True
 
-    def __init__(self, Farbe, Marke) -> None:
-        self.marke = Marke 
-        self.farbe = Farbe 
+    def __init__(self, farbe, marke) -> None:
+        self.marke = marke 
+        self.farbe = farbe 
 
     def max_papier_drucken(self):
         self.aktuell_papier_drucken = self.max_papier_drucken
