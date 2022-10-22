@@ -6,9 +6,22 @@ for x in range(1,101):
         print("FizzBuzz")
     elif (x % 3 == 0):
         print("Fizz")
-    elif (x % 5 == 0):
+    elif (x % 5 == 0 ):
         print("Buzz")
     else:
         print(x)
 
 
+##########Variante 2 :
+
+
+def FizzBuzz(input):
+    if (input % 3 == 0 and input % 5 == 0):
+        return "FizzBuzz"
+    elif (input % 3 == 0):
+        return "Fizz"
+    elif (input % 5 == 0 ):
+        return "Buzz"
+    else:
+       return input 
+print(FizzBuzz(3))
