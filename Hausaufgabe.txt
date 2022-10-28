@@ -17,7 +17,7 @@ ________________________________________________________________________________
 ________________________________________________________________________________________________________________________________________
 8. Wie viel Geld haben die Kunden aus Dänemark insgesamt ausgegeben? SELECT sum(total) FROM invoices WHERE BillingCountry = 'Denmark';
 ________________________________________________________________________________________________________________________________________
-8. Wie viel Geld haben die Kunden aus Dänemark im Schnitt ausgegeben? SELECT avg(total) FROM invoices WHERE BillingCountry = 'Denmark';
+8. Wie viel Geld haben die Kunden aus Dänemark im Schnitt ausgegeben? SELECT ROUND(avg(total), 2) FROM invoices WHERE BillingCountry = 'Denmark';
 ________________________________________________________________________________________________________________________________________
 9. Welches Album hat die meisten Lieder?
 SELECT  AlbumId ,COUNT(*) count
