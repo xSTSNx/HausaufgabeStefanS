@@ -1,0 +1,48 @@
+1. Wie viele Genres gibt es? = 25		SELECT COUNT(Name)FROM genres; 
+________________________________________________________________________________________________________________
+2. Welche Kunden stammen aus Deutschland?	SELECT FirstName, LastName FROM customers WHERE Country = 'Germany';
+________________________________________________________________________________________________________________				|
+3. Welche Kunden haben keine Fax Nummer?	SELECT FirstName, LastName FROM customers WHERE Fax is NULL;
+________________________________________________________________________________________________________________
+4. Was hoch ist die höchste erstellte Rechnung?	SELECT max(total) as highestPrice FROM invoices;
+________________________________________________________________________________________________________________
+
+5. Wie hoch ist die kleinste erstellte Rechnung?	SELECT min(total) as lowestPrice FROM invoices;
+________________________________________________________________________________________________________________
+6. Wie viel Geld wurde insgesammt eingenommen?		SELECT sum(total) as sumTotal FROM invoices;
+______________________________________________________________________________________________________________________
+7. Wie viel Geld hat der Kunde mit der customerID 5 ausgebenen?SELECT sum (total) FROM invoices WHERE CustomerId = 5;
+______________________________________________________________________________________________________________________
+7. Wie viel Geld hat der Kunde mit der customerID 19 ausgebenen?SELECT sum (total) FROM invoices WHERE CustomerId = 19;
+________________________________________________________________________________________________________________________________________
+8. Wie viel Geld haben die Kunden aus Dänemark insgesamt ausgegeben? SELECT sum(total) FROM invoices WHERE BillingCountry = 'Denmark';
+________________________________________________________________________________________________________________________________________
+8. Wie viel Geld haben die Kunden aus Dänemark im Schnitt ausgegeben? SELECT avg(total) FROM invoices WHERE BillingCountry = 'Denmark';
+________________________________________________________________________________________________________________________________________
+9. Welches Album hat die meisten Lieder?
+SELECT  AlbumId ,COUNT(*) count
+FROM tracks
+GROUP BY AlbumId
+Having COUNT(*) > 1
+ORDER By count DESC
+________________________________________________________________________________________________________________________________________
+10. Welches Lied wurde am häufigsten verkauft?
+SELECT  TrackId ,COUNT(*) count
+FROM invoice_items
+GROUP BY TrackId
+Having COUNT(*) > 1
+ORDER By count DESC
+________________________________________________________________________________________________________________________________________
+11. Welches Lied ist am häufigsten in Playlists enthalten?
+SELECT  TrackId ,COUNT(*) count
+FROM invoice_items
+GROUP BY TrackId
+Having COUNT(*) > 1
+ORDER By count DESC
+________________________________________________________________________________________________________________________________________
+12. Welcher MediaType ist der häufigste?
+SELECT  MediaTypeId ,COUNT(*) count
+FROM tracks
+GROUP BY MediaTypeId
+Having COUNT(*) > 1
+ORDER By count DESC
